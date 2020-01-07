@@ -1,0 +1,42 @@
+
+***********
+Database : MongoDb 
+PORT : 3000
+server : index.js
+
+
+***********
+
+
+Back-End Structure
+
+*NodeJS   [node files]
+
++---*controllers
+    +---*newBatchControllers.js
+    +---*studentControllers.js
+    +---*user.Controllers.js
+
+
+----*dbconnections  [database connection]
+     +---*config
+         +---config.js
+         +---config.json
+         +---jwtHelper.js  [JSON WEB Token ---authentication using local strategy]
+
+     +---*model
+         +---db.js
+     +---*models  [Schema files]
+         +---newbatch.js
+         +---student.js
+         +---users.model.js
+     +---*routes  (user files)
+         +---users.router.js
+         
++---*index.js  (server File || 300)
+         
+
+
+
+
+

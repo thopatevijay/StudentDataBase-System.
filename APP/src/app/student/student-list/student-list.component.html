@@ -1,0 +1,67 @@
+<div class="search-div">
+    <mat-form-field class="search-form-field" floatLabel="never">
+        <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+
+
+<div class="mat-elevation-z8">
+    <mat-table [dataSource]='listData' matSort>
+        <ng-container matColumnDef="firstName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Full Name</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.first_name}} {{element.last_name}}</mat-cell>
+            
+        </ng-container>
+        <ng-container matColumnDef="lastName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</mat-header-cell>
+            <mat-cell *matCellDef="let element"></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="course">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Cousre</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.course}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="batchno">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Batch No</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.batch_no}}</mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="contactno">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Contact No</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.contact_no}}</mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.email_id}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="remainingamt">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Pending Fees</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.remaining_fee}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let stud">
+                <button mat-icon-button [routerLink]="['/dashboard/viewdetail/'+ stud._id]">
+                    <mat-icon>launch</mat-icon>
+                </button>
+                <!-- <a class="action-btn" (click)="OnEdit(stud)"><button mat-icon-button><mat-icon>edit</mat-icon></button></a> -->
+                <a class="action-btn" (click)="onDelete(stud._id,studentForm)"><button mat-icon-button color="warn">
+                        <mat-icon>delete_outline</mat-icon>
+                    </button></a>
+
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>

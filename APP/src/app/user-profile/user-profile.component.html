@@ -1,0 +1,50 @@
+<!-- <div class="card text-white bg-secondary mb-3" style="max-width: 20rem; height: 100%; position:fixed;" *ngIf="userDetails">
+    <div class="card-header">Dashboard</div>
+    <div class="card-body" style="color:black">
+
+        <h4 class="card-title">{{userDetails.fullName}}</h4>
+        <br><br>
+        <p class="card-text">Username : {{userDetails.email}} </p>
+        <br><br><br>
+        <div style="margin-left: 75px;">
+            <button (click)="onLogout()" type="submit" class="btn btn-success">Logout</button>
+<br><br>
+            <button routerLink="/addstudent" type="button" class="btn btn-outline-primary">Add Student</button>
+
+            <button routerLink="/studentlist" type="button" class="btn btn-outline-primary">Student List</button>
+
+        </div>
+
+
+        
+    </div>
+</div> -->
+
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header" *ngIf="userDetails" style="color: blue;">
+            <h6>{{userDetails.fullName}}</h6>
+            <h6>{{userDetails.email}}</h6>
+        </div>
+        <img src="https://png.pngtree.com/png-vector/20190423/ourmid/pngtree-user-icon-vector-illustration-in-glyph-style-for-any-purpose-png-image_975597.jpg" alt="">
+    </div>
+    <mat-divider></mat-divider>
+
+    <h2 matSubheader>Pages</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">Dashboard</a>
+    <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/posts">Posts</a> -->
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/studentlist">Student List</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/addstudent">Add/Edit Student</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/addbatch">Create batch</a>
+
+
+    <mat-divider></mat-divider>
+    
+
+    <!-- <button (click)="onLogout()" type="submit" class="btn btn-success">Logout</button> -->
+
+
+
+
+</mat-nav-list>

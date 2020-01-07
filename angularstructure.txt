@@ -1,0 +1,54 @@
+
+***********
+Framework : Angular
+PORT : 4200  ||  "mongodb://localhost:27017/StudentData",
+
+
+***********
+-----*APP [angular Project]
+
+---Login [default component]
+* sign up with your fullname,email & password.
+* after sign up try to login with same credentials.
+* successfull login will redirected to DashBoard.
+* At DashBoard : Create new batch .
+* At DashBoard : add new student firstly.
+* At DashBoard : After adding student it will show in student-list page.
+* Able to do CRUD operations.
+* Sign Out.(automatically sign out after 30 mins)
+
+
+
+
+Back-End Structure
+
+*NodeJS   [node files]
+
++---*controllers
+    +---*newBatchControllers.js
+    +---*studentControllers.js
+    +---*user.Controllers.js
+
+
+----*dbconnections  [database connection]
+     +---*config
+         +---config.js
+         +---config.json
+         +---jwtHelper.js  [JSON WEB Token ---authentication using local strategy]
+
+     +---*model
+         +---db.js
+     +---*models  [Schema files]
+         +---newbatch.js
+         +---student.js
+         +---users.model.js
+     +---*routes  (user files)
+         +---users.router.js
+         
++---*index.js  (server File || 300)
+         
+
+
+
+
+

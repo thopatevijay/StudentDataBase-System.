@@ -1,0 +1,106 @@
+<div style="width: 400px; margin-left: 300px;">
+
+    <form #batchForm="ngForm" (ngSubmit)="onSubmit(batchForm)">
+
+        <div class="example-container">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="batchservice.selectedBatch._id">
+
+
+            <mat-form-field>
+                <mat-select placeholder="Course" name="course_name" #name="ngModel"
+                    [(ngModel)]="batchservice.selectedBatch.course_name" required>
+                    <mat-option value="FSD">FSD</mat-option>
+                    <mat-option value="RPA">RPA</mat-option>
+                    <mat-option value="Digital Marketing">Digital Marketing</mat-option>
+
+                </mat-select>
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <input matInput placeholder="Batch No" name="batch_no" #name="ngModel"
+                    [(ngModel)]="batchservice.selectedBatch.batch_no" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker1" placeholder="Choose start date" name="start_date"
+                    #name="ngModel" [(ngModel)]="batchservice.selectedBatch.start_date" required>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker2" placeholder="Choose end date" name="end_date" #name="ngModel"
+                    [(ngModel)]="batchservice.selectedBatch.end_date" required>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+                <textarea matInput placeholder="Notes" name="notes" #name="ngModel"
+                    [(ngModel)]="batchservice.selectedBatch.notes"></textarea>
+            </mat-form-field>
+
+
+        </div>
+        <button type="submit" [disabled]="!batchForm.valid" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+
+<div class="search-div">
+
+    <mat-form-field class="search-form-field" floatLabel="never">
+        <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+
+
+<div class="mat-elevation-z8">
+    <mat-table [dataSource]='listData' matSort>
+        <ng-container matColumnDef="batchno">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Batch No</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.batch_no}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="course">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Cousre</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.course_name}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="startdate">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Start Date</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.start_date}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="enddate">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>End Date</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.end_date}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="notes">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Notes</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.notes}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let batch">
+                <a class="action-btn" (click)="onEdit(batch)"><button mat-icon-button>
+                        <mat-icon>edit</mat-icon>
+                    </button></a>
+                <a class="action-btn" (click)="onDelete(batch._id,batchForm)"><button mat-icon-button color="warn">
+                        <mat-icon>delete_outline</mat-icon>
+                    </button></a>
+
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>

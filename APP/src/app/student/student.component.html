@@ -1,0 +1,351 @@
+<div class="row">
+    <div class="col s12">
+
+        <div class="row">
+            <div class="" style="margin-left: 50px; border-style:groove;">
+                <div class="col">
+
+                    <form #studentForm="ngForm" (ngSubmit)="onSubmit(studentForm)">
+                        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="studentService.selectedStudent._id">
+
+                        <!-- <div class="col-12"> -->
+                        <mat-form-field>
+                            <mat-select placeholder="Course" name="course" #name="ngModel"
+                                [(ngModel)]="studentService.selectedStudent.course">
+                                <mat-option value="FSD">FSD</mat-option>
+                                <mat-option value="RPA">RPA</mat-option>
+                                <mat-option value="Digital Marketing">Digital Marketing</mat-option>
+
+                            </mat-select>
+                        </mat-form-field>
+                        <!-- </div> -->
+
+                        <div class="form-group">
+                            <!-- <label>Address</label> -->
+                            <mat-form-field>
+                                <input matInput placeholder="Batch No" name="batch_no" #name="ngModel"
+                                    [(ngModel)]="studentService.selectedStudent.batch_no">
+                            </mat-form-field>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <!-- <label>First Name</label> -->
+                                <mat-form-field>
+                                    <input matInput class="" placeholder="First Name" name="first_name" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.first_name" required>
+                                </mat-form-field>
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <!-- <label>Last Name</label> -->
+                                <mat-form-field>
+
+                                    <input matInput placeholder="Last Name" name="last_name" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.last_name" required>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <!-- <label>Email Id</label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="Email ID" name="email_id" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.email_id">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <!-- <label>Contact No </label>
+                             -->
+                                <mat-form-field>
+                                    <input matInput placeholder="Contact No" name="contact_no" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.contact_no">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <!-- <label>Address</label> -->
+                            <mat-form-field>
+                                <input matInput placeholder="Address" name="address" #name="ngModel"
+                                    [(ngModel)]="studentService.selectedStudent.address">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <!-- <label>City</label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="City" name="city" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.city">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <!-- <label>State</label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="State" name="state" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.state">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <!-- <label>Gender</label> -->
+                                <mat-form-field>
+                                    <mat-select placeholder="Gender" name="gender" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.gender">
+                                        <mat-option value="Male">Male</mat-option>
+                                        <mat-option value="Female">Female</mat-option>
+                                        <mat-option value="Other">Other</mat-option>
+
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <mat-form-field>
+                                    <input matInput [matDatepicker]="picker" placeholder="Date of Birth"
+                                        name="date_of_birth" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.date_of_birth">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group ">
+                            <!-- <label>Employment Status</label> -->
+                            <mat-form-field>
+                                <input matInput placeholder="Employement Status" name="employment_status"
+                                    #name="ngModel" [(ngModel)]="studentService.selectedStudent.employment_status">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-group">
+                            <!-- <label>Company Name</label> -->
+                            <mat-form-field>
+                                <input matInput placeholder="Company Name" name="company_name" #name="ngModel"
+                                    [(ngModel)]="studentService.selectedStudent.company_name">
+                            </mat-form-field>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <!-- <label>Years Of Experiance</label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="Years Of Experiance" name="years_of_experiance"
+                                        #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.years_of_experiance">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <!-- <label>Skill Sets </label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="Skill Sets" name="key_skills" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.key_skills">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <!-- <label>Highest Qualification</label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="Qualification" name="highest_qualification"
+                                        #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.highest_qualification">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <!-- <label>Stream </label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="Stream" name="disipline" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.disipline">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <!-- <label>College Name</label> -->
+                            <mat-form-field>
+                                <input matInput placeholder="College Name" name="college_of_study" #name="ngModel"
+                                    [(ngModel)]="studentService.selectedStudent.college_of_study">
+                            </mat-form-field>
+
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <!-- <label>Degree Completion Year</label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="Degree Completion Year" name="degree_completion_year"
+                                        #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.degree_completion_year">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <!-- <label>Percentage </label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="Percentage" name="percentage" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.percentage">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+
+                        <mat-form-field>
+                            <mat-select placeholder="Scholarship" name="schollarship" #name="ngModel"
+                                [(ngModel)]="studentService.selectedStudent.schollarship">
+                                <mat-option value="Eligible">Eligible</mat-option>
+                                <mat-option value="Not Eligible">Not Eligible</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div class="form-row">
+                            
+                            <div class="form-group col-md-6">
+                                <!-- <label>Total Fees </label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="Total Fees" name="total_fee" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.total_fee"
+                                        (keyup)="cal()">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <!-- <label>First Installment</label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="First Installment" name="first_installment"
+                                        #name="ngModel" [(ngModel)]="studentService.selectedStudent.first_installment"
+                                         (keyup)="cal()">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <!-- <label>Remaining Amount </label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="Remaining Amount" name="remaining_fee" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.remaining_fee"
+                                        value="{{remaining_fee}}">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <!-- <label>Payment Mode</label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="By cash, Chequ" name="mode_of_payment" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.mode_of_payment">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <!-- <label>Cheque No. </label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="Cheque No" name="cheque_no" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.cheque_no">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <!-- <label>Transaction Id</label> -->
+                                <mat-form-field>
+                                    <input matInput placeholder="Transaction ID" name="transaction_id" #name="ngModel"
+                                        [(ngModel)]="studentService.selectedStudent.transaction_id">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                        </div>
+                        <button type="submit" [disabled]="!studentForm.valid" class="btn btn-primary">Submit</button>
+                        <button class="btn btn-primary" type="button" (click)="resetForm(studentForm)">Reset</button>
+                    </form>
+                </div>
+            </div>
+            <!-- </div> -->
+            <div class="col s7">
+
+                <div class="search-div">
+                    <!-- <button mat-raised-button>
+                        <mat-icon>add</mat-icon>Create
+                    </button> -->
+                    <mat-form-field class="search-form-field" floatLabel="never">
+                        <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off"
+                            (keyup)="applyFilter()">
+                        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey"
+                            (click)="onSearchClear()">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+
+
+                <div class="mat-elevation-z8">
+                    <mat-table [dataSource]='listData' matSort>
+                        <ng-container matColumnDef="firstName">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>Full Name</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.first_name}} {{element.last_name}}</mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="lastName">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</mat-header-cell>
+                            <mat-cell *matCellDef="let element"></mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="course">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>Cousre</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.course}}</mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="email">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+                            <mat-cell *matCellDef="let element">{{element.email_id}}</mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="actions">
+                            <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+                            <mat-cell *matCellDef="let stud">
+                                <!-- <button mat-icon-button [routerLink]="['/viewdetail/'+ stud._id]"><mat-icon>launch</mat-icon></button> -->
+                                <a class="action-btn" (click)="onEdit(stud)"><button mat-icon-button>
+                                        <mat-icon>edit</mat-icon>
+                                    </button></a>
+                                <!-- <a class="action-btn"  (click)="onDelete(stud._id,studentForm)"><button mat-icon-button color="warn"><mat-icon>delete_outline</mat-icon></button></a> -->
+
+                            </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="loading">
+                            <mat-footer-cell *matFooterCellDef colspan="6">
+                                Loadind student data...
+                            </mat-footer-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                        <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}">
+                        </mat-footer-row>
+                    </mat-table>
+                    <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="5" showFirstLastButtons>
+                    </mat-paginator>
+                </div>
+
+            </div>
+        </div>
+    </div>
