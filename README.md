@@ -20,4 +20,12 @@
      
      
 
-- 
+- Back End : node.js/Express.js , MongoDb.
+
+    - Server runs on 3000 Port.
+ 
+ - Front End : Angular.
+    - Port 4200.
+    
+   
+   
