@@ -14,9 +14,9 @@
     - First of all you must sign up with email.
     - After SignUp try to login with same credentials.(Authenticated by JWT).
     - You will be redirected on Dashboard page after successful login & password.
-          1. Add Batch.
-          2. Fill student form.
-          3. Go to Student list for whole database.
+         1. Add Batch.
+         2. Fill student form.
+         3. Go to Student list for whole database.
      
      
 
